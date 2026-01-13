@@ -3,8 +3,8 @@
 # ==========================================
 
 # 地图尺寸
-MAP_WIDTH = 50  # y轴 0-49
-MAP_HEIGHT = 50 # x轴 0-49
+MAP_WIDTH = 5
+MAP_HEIGHT = 5
 
 # 地块类型编码 (Grid Types)
 GRID_TYPE_EMPTY = 0    # 空地

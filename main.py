@@ -69,22 +69,15 @@ class GameEnv:
     def _init_map(self):
         # 随机生成几个市场
         for i in range(3):
-            mx, my = random.randint(0, 49), random.randint(0, 49)
+            mx, my = random.randint(0, MAP_HEIGHT - 1), random.randint(0, MAP_WIDTH - 1)
             # 避免重叠
             while self.map_grid[mx][my] != GRID_TYPE_EMPTY:
-                 mx, my = random.randint(0, 49), random.randint(0, 49)
+                 mx, my = random.randint(0, MAP_HEIGHT - 1), random.randint(0, MAP_WIDTH - 1)
             
             self.map_grid[mx][my] = GRID_TYPE_MARKET
             self.markets.append(Market(mx, my, f"Market_{i}"))
 
     def step(self, command: int):
-        """
-        核心步进函数：
-        1. 解析玩家指令
-        2. 更新物理状态 (移动、生产)
-        3. 触发事件 (到达、结算)
-        4. 返回新的观察数据
-        """
         self.time += 1
 
         self._handle_command(command)
