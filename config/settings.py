@@ -37,7 +37,7 @@ UNIT_CAPACITY = 1   # 件
 PRODUCT_SEMICONDUCTOR = 0
 
 # 买入、卖出时间
-PRODUCT_TRANSACTION_TIME = 1  # Second
+PRODUCT_TRANSACTION_TIME = 0.25  # Second
 
 # 产品详细配置表
 # key: 产品ID

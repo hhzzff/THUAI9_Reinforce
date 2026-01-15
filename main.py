@@ -19,7 +19,7 @@ class Market:
         # 模拟价格函数 Price(t)，这里简单用正弦波模拟波动
         self.price_funcs = {
             p_name: lambda t, base=p["val_range"][0], top=p["val_range"][1]: 
-                base + (top - base) * (0.5 * (math.sin(t / 10.0) + 1))
+                base + (top - base) * (0.5 * (math.sin(t) + 1))
             for p_name, p in PRODUCTS.items()
         }
 
@@ -78,7 +78,7 @@ class GameEnv:
             self.markets.append(Market(mx, my, f"Market_{i}"))
 
     def step(self, command: int):
-        self.time += 1
+        self.time += 0.25
 
         self._handle_command(command)
 
